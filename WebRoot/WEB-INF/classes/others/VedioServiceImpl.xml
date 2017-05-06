@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="VedioServiceImpl">
+	<!-- 保存交易日志 -->
+	<insert id="saveDownloadedVedio" parameterType="Map">
+		INSERT INTO java110.td_s_buyvedio (
+						createdate,
+						personId,
+						status,
+						vedioId
+					)
+					VALUES
+						(
+							#{createdate},
+							#{personId},
+							#{status},
+							#{vedioId}
+						)
+	</insert>
+	<!-- 根据Id查询视频 -->
+	<select id="getVedioByVedioId" parameterType="Map" resultType="Map">
+		SELECT
+			a.vedioname,
+			a.vedioImage,
+			a.id,
+			b.vediocontext
+		FROM
+			java110.td_s_vedio a,
+			java110.td_s_vedio_info b
+		WHERE
+			a.studyBeanInfo_id = b.id
+			and a.id=#{vedioId}
+	</select>
+	
+	<!-- 根据Id查询视频 -->
+	<select id="getDownloadedVedio" parameterType="Map" resultType="Map">
+		SELECT
+			a.id,a.personId,a.vedioId
+		FROM
+			java110.td_s_buyvedio a
+		WHERE
+			a.personId = #{personId} 
+		and a.vedioId = #{vedioId} 
+		and a.status = '0'
+	</select>
+</mapper>

@@ -1,0 +1,92 @@
+CREATE TABLE t_sendredpacket(
+	sendRedPacketId VARCHAR(50) NOT NULL,
+	userId INT NOT NULL COMMENT '用户Id',
+	redType VARCHAR(20) NOT NULL COMMENT '红包类型',
+	copies VARCHAR(20) ,
+	money VARCHAR(20) NOT NULL COMMENT '金额',
+	STATUS VARCHAR(10) NOT NULL COMMENT '数据状态',
+	userOrMerchant VARCHAR(10) NOT NULL COMMENT '用户还是商家',
+	productId INT COMMENT '产品Id',
+	createDate DATETIME,
+	months INT ,
+	days INT,
+	finishDate DATETIME
+);
+
+CREATE TABLE t_getredpacket(
+	getRedPacketId VARCHAR(50) NOT NULL,
+	sendRedPacketId INT NOT NULL,
+	userId INT NOT NULL COMMENT '用户Id',
+	money VARCHAR(20) NOT NULL COMMENT '金额',
+	STATUS VARCHAR(10) NOT NULL COMMENT '数据状态',
+	createDate DATETIME,
+	months INT ,
+	days INT
+
+);
+
+
+CREATE TABLE t_exchangeredpacket(
+	exchangeRedPacketId VARCHAR(50) NOT NULL,
+	userId INT NOT NULL COMMENT '用户Id',
+	money VARCHAR(20) NOT NULL COMMENT '金额',
+	alipayAccount VARCHAR(50) NOT NULL COMMENT '支付宝账号',
+	rate VARCHAR(10) NOT NULL,
+	STATUS VARCHAR(10) NOT NULL COMMENT '数据状态',
+
+	createDate DATETIME,
+	months INT ,
+	days INT,
+	finishDate DATETIME,
+	dealUserId INT NOT NULL COMMENT '处理用户Id'
+
+);
+
+CREATE TABLE t_payLog(
+	payId VARCHAR(50) NOT NULL,
+	WIDtradeNo VARCHAR(50) NOT NULL,
+	createDate DATETIME,
+	days INT,
+	dealDate DATETIME,
+	money VARCHAR(20) NOT NULL,
+	months INT,
+	personId INT NOT NULL,
+	score VARCHAR(20),
+	STATUS VARCHAR(10) NOT NULL COMMENT '数据状态',
+	wIDoutTradeNo VARCHAR(50) COMMENT '外部交易流水',
+	redirectFlag VARCHAR(10) COMMENT '跳转标识',
+	channelId VARCHAR(50) COMMENT '支付渠道',
+	returnPayUrl VARCHAR(200) COMMENT '跳转URL'
+
+);
+
+CREATE TABLE t_user(
+	userId VARCHAR(50) NOT NULL,
+	NAME VARCHAR(64) COMMENT '用户名称', 
+	sex VARCHAR(10) COMMENT '用户性别',
+	phone VARCHAR(20),
+	email VARCHAR(20),
+	passwd  VARCHAR(20),
+	wOpenId VARCHAR(50),
+	zOpenId VARCHAR(50),
+	createDate DATETIME,
+	days INT,
+	months INT,
+	STATUS VARCHAR(10) NOT NULL COMMENT '数据状态'
+
+);
+
+CREATE TABLE t_account(
+	accountId VARCHAR(50) NOT NULL,
+	
+	
+	userId INT COMMENT '用户ID', 
+	amount VARCHAR(10) COMMENT '金额',
+	
+	createDate DATETIME,
+
+	STATUS VARCHAR(10) NOT NULL COMMENT '数据状态',
+	alipayAccount VARCHAR(50) COMMENT '账户'
+
+);
+

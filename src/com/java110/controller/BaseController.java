@@ -51,9 +51,9 @@ public abstract class BaseController extends HttpServlet {
 	 */
 	public boolean loginValidate(HttpServletRequest request) {
 		// 生产获取用户
-//		User user = this.getUser();
+		User user = this.getUser();
 		// 测试获取用户
-		 User user = this.getTestUser();
+		 //User user = this.getTestUser();
 		if (user == null) {
 			return false;
 		}

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="SendPacketServiceImpl">
+	<!-- 根据Id 查询发的红包 -->
+	<select id="getSendPacketById" parameterType="Map" resultType="Map">
+		SELECT
+			a.copies,
+			a.createDate,
+			a.finishDate,
+			a.money,
+			a.productId,
+			a.redType,
+			a.sendRedPacketId,
+			a.status,
+			a.userId,
+			a.userOrMerchant
+		FROM
+			t_sendredpacket a
+		WHERE
+			a.sendRedPacketId = #{sendRedPacketId}
+	</select>
+	
+	<!-- 保存发的红包数据 -->
+	<insert id="saveSendPacket" parameterType="Map">
+		INSERT INTO t_sendredpacket (
+			sendRedPacketId,
+			userId,
+			redType,
+			copies,
+			money,
+			status,
+			userOrMerchant,
+			productId,
+			createDate,
+			months,
+			days,
+			finishDate
+		)
+		VALUES
+		(
+			#{sendRedPacketId},
+			#{userId},
+			#{redType},
+			#{copies},
+			#{money},
+			#{status},
+			#{userOrMerchant},
+			#{productId},
+			#{createDate},
+			#{months},
+			#{days},
+			#{finishDate}
+		)
+	</insert>
+	
+	<!--分页获取 微信发的红包  -->
+	<select id="getSendPacketListByWOpenId" parameterType="Map" resultType="Map">
+		<![CDATA[
+			SELECT
+				a.sendRedPacketId,
+				a.userId,
+				a.redType,
+				a.copies,
+				a.money,
+				a.status,
+				a.userOrMerchant,
+				a.productId,
+				a.createDate,
+				a.finishDate,
+				u.name
+			FROM
+				t_sendredpacket a,t_user u
+			WHERE
+				a.status <> 'C'
+			and a.userId = u.userId
+			and u.wOpenId is not null
+			and not EXISTS(
+				select g.userId from t_getredpacket g where g.userId = #{userId} and a.sendRedPacketId = g.sendRedPacketId
+			)
+			LIMIT #{page},#{rows}
+		 ]]>
+	</select>
+	
+	<!--分页获取 支付宝发的红包  -->
+	<select id="getSendPacketListByZOpenId" parameterType="Map" resultType="Map">
+		<![CDATA[
+			SELECT
+				a.sendRedPacketId,
+				a.userId,
+				a.redType,
+				a.copies,
+				a.money,
+				a.status,
+				a.userOrMerchant,
+				a.productId,
+				a.createDate,
+				a.finishDate,
+				u.name
+			FROM
+				t_sendredpacket a,t_user u
+			WHERE
+				a.status <> 'C'
+			and a.userId = u.userId
+			and u.zOpenId is not null
+			and not EXISTS(
+				select g.userId from t_getredpacket g where g.userId = #{userId} and a.sendRedPacketId = g.sendRedPacketId
+			)
+			LIMIT #{page},#{rows}
+		 ]]>
+	</select>
+	
+	
+	<!--分页获取 发的红包  -->
+	<select id="getSendPacketList" parameterType="Map" resultType="Map">
+		<![CDATA[
+			SELECT
+				a.sendRedPacketId,
+				a.userId,
+				a.redType,
+				a.copies,
+				a.money,
+				a.status,
+				a.userOrMerchant,
+				a.productId,
+				a.createDate,
+				a.finishDate,
+				u.name
+			FROM
+				t_sendredpacket a,t_user u
+			WHERE
+				a.status <> 'C'
+			and a.userId = u.userId
+			and not EXISTS(
+				select g.userId from t_getredpacket g where g.userId = #{userId} and a.sendRedPacketId = g.sendRedPacketId
+			)
+			LIMIT #{page},#{rows}
+		 ]]>
+	</select>
+	
+	<!-- 保存商家发红包数据 -->
+	<insert id="saveMerchantSendRedPacket" parameterType="Map">
+		INSERT INTO t_merchant_red_packet (
+					sendRedPacketId,
+					merchantId,
+					merchantName,
+					productId,
+					productName,
+					imgUrl,
+					productDesc,
+					createDate,
+					status,
+					spikeDate
+				)
+				VALUES
+					(
+						#{sendRedPacketId},
+						#{merchantId},
+						#{merchantName},
+						#{productId},
+						#{productName},
+						#{imgUrl},
+						#{productDesc},
+						#{createDate},
+						#{status},
+						#{spikeDate}
+					)
+	</insert>
+	
+	<!-- 根据红包Id获取商家信息 -->
+	<select id="getMerchantSendRedPacketBySendRedPacketId" parameterType="Map" resultType="Map">
+		SELECT
+			a.sendRedPacketId,
+			a.merchantId,
+			a.productId,
+			a.productName,
+			a.imgUrl,
+			a.productDesc,
+			a.createDate,
+			a.spikeDate
+		FROM
+			t_merchant_red_packet a
+		WHERE
+			a.status = '0'
+		AND a.sendRedPacketId = #{sendRedPacketId}
+		 limit 0,1
+	</select>
+</mapper>

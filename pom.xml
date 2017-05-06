@@ -242,6 +242,7 @@
   </dependencies>
   <build>
     <sourceDirectory>${basedir}/src</sourceDirectory>
+ 
     <outputDirectory>${basedir}/WebRoot/WEB-INF/classes</outputDirectory>
     <resources>
       <resource>
@@ -250,6 +251,12 @@
           <exclude>**/*.java</exclude>
         </excludes>
       </resource>
+      <resource>
+			<directory>config</directory>
+	</resource>
+		<resource>
+				<directory>etc</directory>
+			</resource>
     </resources>
     <plugins>
       <plugin>

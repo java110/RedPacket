@@ -147,15 +147,15 @@ public class Global {
 
 	// ---------------------------------------站点相关信息定义开始----------------------------------//
 
-	// public static final String DOMAIN = "http://m.java110.com/RedPacket";
+	 public static final String DOMAIN = "http://www.java110.com/RedPacket";
 
 	// public static final String DOMAIN = "http://135.192.74.6:8080";
 
-	public static final String DOMAIN = "http://192.168.43.5:8080";
+//	public static final String DOMAIN = "http://192.168.43.5:8080";
 
-	public static final String IMG_DOMAIN = "http://img.java110.com";
+	public static final String IMG_DOMAIN = "http://www.java110.com";
 
-	public static final String STATIC_DOMAIN = "http://static.java110.com";
+	public static final String STATIC_DOMAIN = "http://www.java110.com";
 
 	// ---------------------------------------站点相关信息定义开始----------------------------------//
 

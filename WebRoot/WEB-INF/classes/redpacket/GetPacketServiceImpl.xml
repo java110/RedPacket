@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="GetPacketServiceImpl">
+	<!-- 查询抢到的红包（所有） -->
+	<select id="getPacketList" parameterType="Map" resultType="Map">
+		
+	</select>
+	
+	<!-- 保存我抢到的红包 -->
+	<insert id="saveGetPacket" parameterType="Map">
+	INSERT INTO t_getredpacket (
+						getRedPacketId,
+						sendRedPacketId,
+						userId,
+						money,
+						createDate,
+						months,
+						days,
+						status
+					)
+					VALUES
+					(
+						#{getRedPacketId},
+						#{sendRedPacketId},
+						#{userId},
+						#{money},
+						#{createDate},
+						#{months},
+						#{days},
+						#{status}
+					)
+	</insert>
+	
+	<!-- 根据发红包Id 获取 已经被抢的红包  -->
+	<select id="getPacketListBySendPacketId" parameterType="Map" resultType="Map">
+	<![CDATA[
+		SELECT
+			a.getRedPacketId,
+			a.money,
+			a.createDate,
+			a.sendRedPacketId,
+			a.userId,
+			a.status
+		FROM
+			t_getredpacket a
+		WHERE
+			a.sendRedPacketId = #{sendRedPacketId}
+		AND a.status <> 'C'
+	]]>
+	</select>
+	
+	<!-- 查询用户是否抢过改红包  -->
+	<select id="getPacketBySendPacketIdAndUserId" parameterType="Map" resultType="Map">
+	<![CDATA[
+		SELECT
+			a.getRedPacketId,
+			a.money,
+			a.createDate,
+			a.sendRedPacketId,
+			a.userId,
+			a.status
+		FROM
+			t_getredpacket a
+		WHERE
+			a.sendRedPacketId = #{sendRedPacketId}
+		AND a.userId = #{userId}
+		limit 0,1
+	]]>
+	</select>
+</mapper>
