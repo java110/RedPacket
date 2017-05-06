@@ -1,0 +1,72 @@
+.red_main{
+	width: 100%;
+	min-height: 300px;
+}
+.red_header_get{
+	width: 100%;
+	height: 150px;
+	background: url(../RedImg/page_banner.png) no-repeat top left scroll;
+	background-size: 100% 100%;
+}
+.red_header_get h1{
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+	color: #da251c;
+	line-height: 165px;
+}
+.red_main .red_main_type{
+	width: 90%;
+	margin: 30px auto;
+}
+.red_main .red_main_type li{
+	clear: both;
+	list-style-type: none;
+	width: 100%;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.red_main .red_main_type li .red_info_1{
+	background: #fa9e3b;
+    width: 90%;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+.red_main .red_main_type li .red_info_1 .red_packet_info{
+	width: 80%;
+	height: 80px;
+	margin: 0 auto;
+}
+.red_main .red_main_type li .red_info_1 .red_packet_info .red_packet_img{
+	width: 58px;
+	height: 65px;
+	border-radius: 10px;
+}
+.red_main .red_main_type li .red_info_1 .red_packet_info .red_packet_t{
+	font-size: 12px;
+	color:#fff;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+.red_packet_t .r_b{
+	display: inline-block;
+	font-size: 18px;
+	font-weight: bold;
+	color:#fff;
+	margin-top: 5px;
+}
+.red_info_1 .red_packet_b{
+	background-color: #fbfbfb;
+	width: 100%;
+	height: 40px;
+	border-radius: 0px 0px 10px 10px;
+}
+.red_info_1 .red_packet_b .red_packet_b_t{
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-weight: bold;
+	color:#9d9d9d;
+}

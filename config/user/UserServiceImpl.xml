@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="UserServiceImpl">
+	<!-- 根据用户Id 获取用户 -->
+	<select id="getUserByUserId" parameterType="Map" resultType="Map">
+		SELECT
+			a.createDate,
+			a.email,
+			a.name,
+			a.passwd,
+			a.phone,
+			a.userId,
+			a.wOpenId,
+			a.zOpenId
+		FROM
+			t_user a
+		WHERE
+			a.userId = #{userId}
+		AND a.status = 0
+	</select>
+	
+	<!-- 根据用户Id查询账户信息 -->
+	<select id="getAccountByUserId" parameterType="Map" resultType="Map">
+		SELECT
+			a.accountId,
+			a.alipayAccount,
+			a.amount,
+			a.createDate,
+			a.userId
+		FROM
+			t_account a
+		WHERE
+			a.userId = #{userId}
+		AND a.status = '0'
+	</select>
+	
+	<!--  根据用户Id修改账户Amount (金额) -->
+	<update id="updateAccountAmountByUserId" parameterType="Map">
+		UPDATE t_account a
+		SET a.amount = #{amount}
+		WHERE
+			a.userId = #{userId}
+		and a.status = '0'
+	</update>
+	
+	<!-- 保存账户交易信息 -->
+	<insert id="saveAccountTradeLog" parameterType="Map">
+		INSERT INTO t_account_trade_log (
+			accountId,
+			channelId,
+			accountFlag,
+			amount,
+			createDate,
+			months,
+			days
+		)
+		VALUES
+		(
+			#{accountId},
+			#{channelId},
+			#{accountFlag},
+			#{amount},
+			#{createDate},
+			#{months},
+			#{days}
+		)
+	</insert>
+	
+	<!-- 根据支付宝openId 查询用户信息 -->
+	<select id="getUserByzOpenId" parameterType="Map" resultType="Map">
+		SELECT
+			a.userId,
+			a. NAME,
+			a.sex,
+			a.phone,
+			a.email,
+			a.passwd,
+			a.wOpenId,
+			a.zOpenId,
+			a.createDate
+		FROM
+			t_user a
+		WHERE
+			a.zOpenId = #{zOpenId}
+		AND a.status = '0'
+	</select>
+	
+	<!-- 根据支付宝openId 查询用户信息 -->
+	<select id="getUserBywOpenId" parameterType="Map" resultType="Map">
+		SELECT
+			a.userId,
+			a. NAME,
+			a.sex,
+			a.phone,
+			a.email,
+			a.passwd,
+			a.wOpenId,
+			a.zOpenId,
+			a.createDate
+		FROM
+			t_user a
+		WHERE
+			a.wOpenId = #{wOpenId}
+		AND a.status = '0'
+	</select>
+	
+	<!-- 保存用户信息 -->
+	<insert id="saveUser" parameterType="Map">
+		INSERT INTO t_user (
+					userId,
+					name,
+					sex,
+					phone,
+					email,
+					passwd,
+					wOpenId,
+					zOpenId,
+					createDate,
+					months,
+					days,
+					status
+				)
+				VALUES
+					(
+						#{userId},
+						#{name},
+						#{sex},
+						#{phone},
+						#{email},
+						#{passwd},
+						#{wOpenId},
+						#{zOpenId},
+						#{createDate},
+						#{months},
+						#{days},
+						'0'
+					)
+	</insert>
+	<!-- 保存账户信息saveAccount -->
+	<insert id="saveAccount" parameterType="Map">
+		INSERT INTO t_account (
+						accountId,
+						userId,
+						amount,
+						createDate,
+						status,
+						alipayAccount
+					)
+					VALUES
+					(
+						#{accountId},
+						#{userId},
+						#{amount},
+						#{createDate},
+						#{status},
+						#{alipayAccount}
+					)
+	</insert>
+	
+	<!-- 根据userId 获取商户 -->
+	<select id="queryMerchantByUserId"  parameterType="Map" resultType="Map">
+		SELECT
+			a.name,
+			a.address,
+			a.createDate,
+			a.merchantId,
+			a.tel,
+			a.userId
+		FROM
+			t_merchant a
+		WHERE
+			a.userId = #{userId} 
+			and a.status = '0'
+			LIMIT 0,1
+	</select>
+	
+	<!-- 根据userId 获取商户 -->
+	<select id="queryProduceByMerchantId"  parameterType="Map" resultType="Map">
+		SELECT
+			a.name,
+			a.description,
+			a.imgUrl,
+			a.merchantId,
+			a.price,
+			a.productId
+		FROM
+			t_product a
+		WHERE
+			a.merchantId = #{merchantId}
+			and a.status = '0'
+			and a.adFlag = '1'
+			LIMIT 0,1
+	</select>
+</mapper>

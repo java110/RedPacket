@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CommonServiceImpl">
+	<!-- 查询 首页展示视频 -->
+	<select id="getPrimaryKey" parameterType="Map" resultType="Map">
+		select nextval(#{primaryName}) val
+	</select>
+</mapper>

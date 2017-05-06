@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BuyPacketServiceImpl">
+	<!-- 保存交易日志 -->
+	<insert id="saveBuyPacketPayLog" parameterType="Map">
+		INSERT INTO t_payLog (
+					payId,
+					WIDtradeNo,
+					createDate,
+					days,
+					dealDate,
+					money,
+					months,
+					personId,
+					score,
+					status,
+					wIDoutTradeNo,
+					redirectFlag,
+					channelId,
+					returnPayUrl
+				)
+				VALUES
+					(
+						#{payId},
+						#{WIDtradeNo},
+						#{createDate},
+						#{days},
+						#{dealDate},
+						#{money},
+						#{months},
+						#{personId},
+						#{score},
+						#{status},
+						#{wIDoutTradeNo},
+						#{redirectFlag},
+						#{channelId},
+						#{returnPayUrl}
+					)
+	</insert>
+	<!-- 根据订单号查询交易订单 -->
+	<select id="queryPayLogByOutTradeNo" parameterType="Map" resultType="Map">
+		SELECT
+			a.payId,
+			a.WIDtradeNo,
+			a.createDate,
+			a.money,
+			a.personId,
+			a.status,
+			a.wIDoutTradeNo,
+			a.redirectFlag
+		FROM
+			t_payLog a
+		WHERE
+			a.wIDoutTradeNo = #{wIDoutTradeNo}
+	</select>
+	
+	<!--根据payId 修改订单 updatePayLogByPayId -->
+	<update id="updatePayLogByPayId" parameterType="Map">
+		UPDATE t_payLog a
+				SET a.dealDate = #{dealDate},
+				a.status = #{status},
+				a.redirectFlag = #{redirectFlag},
+				a.WIDtradeNo = #{WIDtradeNo} 
+				WHERE
+					a.payId = #{payId}
+	</update>
+	
+</mapper>

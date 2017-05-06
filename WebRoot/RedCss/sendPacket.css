@@ -1,0 +1,94 @@
+.red_main{
+	width: 100%;
+	min-height: 300px;
+}
+.red_header_send{
+	width: 100%;
+	height: 150px;
+	background: url(../RedImg/page_banner.png) no-repeat top left scroll;
+	background-size: 100% 100%;
+}
+.red_header_send h1{
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+	color: #da251c;
+	line-height: 165px;
+}
+.red_main .red_money{
+	width: 70%;
+	margin: 30px auto;
+	height: 35px;
+	line-height: 35px;
+	overflow:hidden;
+}
+.red_main .red_main_type{
+	width: 75%;
+	margin: 30px auto;
+}
+.red_main .red_money .red_money_info{
+	font: 700 20px/18px verdana;
+	color:#fff;
+}
+.red_main .red_money .red_money_info i{
+	font-size: 28px;
+	color:#ffde00;
+}
+.red_main .red_main_type .r_type{
+	margin-top: 30px;
+	font: 700 20px/18px verdana;
+	color:#ffde00;
+}
+.red_main .red_main_type .r_type_txt{
+	display: inline-block;
+	width: 30%;
+	text-align: right;
+}
+.red_main .red_main_type .r_type .r_type_input{
+	width: 50%;
+    height: 30px;
+    padding: 3px 5px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    font: 14px Arial,Helvetica,sans-serif;
+}
+.red_main .red_main_type .r_type .r_type_i_redio{
+	width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    border: 1px solid #808080;
+    transition: all 0.4s;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    display: inline-block;
+    vertical-align: middle;
+    margin: -4px 3px 0 0;
+    margin-left: 20px;
+}
+.width45{
+	width: 45%;
+}
+.red_main .red_main_type .margin_top_50{
+	margin-top: 50px;
+}
+.red_send_success{
+	width: 80%;
+	margin: 30px auto;
+	display: none;
+} 
+.red_send_success_txt{
+	font: 700 20px/18px verdana;
+    color: #ffde00;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 35px;
+}
+.red_send_success_txt img{
+	height: 20px;
+}
+
+

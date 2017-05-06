@@ -1,0 +1,11 @@
+.red_main{
+	width: 100%;
+}
+.red_main .red_main_pic{
+	width: 80%;
+	margin: 30px auto;
+}
+.red_main .red_main_pic img{
+	width: 47%;
+	margin-bottom: 30px;
+}

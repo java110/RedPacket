@@ -1,0 +1,199 @@
+#tinybox_1,#login_1,#buyScore,#withDrawId { 
+	z-index:8000;
+	position: absolute;
+	bottom:0;
+	right:0;
+	width:100%;
+	height:100%;
+	cursor:pointer;
+	color:#fff;
+	font-family: "microsoft yahei";
+	background:rgba(0,0,0,0.3);
+	text-align:left;
+}
+.mask-content #alterInfo .act_type{
+	display: inline;
+	font-size:16px;
+}
+.alterInfo_length_withDraw #alterInfo .act_type{
+	display: inline-block;
+	width: 100px;
+}
+#login_1 .main_h_300{
+	height: 300px;
+	width: 80%;
+}
+#withDrawId .main_h_300{
+	height: 350px;
+	width: 80%;
+}
+.login_line .act_value{
+	display: inline-block;
+	width: 260px;
+}
+#mask-bg { 
+	position:absolute;
+	z-index:9000;
+	top:30%;
+	left:10%;
+	background-color:#FFF;
+	width:80%;
+	border-radius: 6px;
+	height:210px
+}
+.mask-top {
+	  border-bottom: 1px solid #e5e5e5;
+	  min-height: 16.43px;
+      padding: 5px;
+      background: #da251c;
+}
+.mask-top .mask_i_title{
+	  color: #FFF;
+	  font-size: 20px;
+	  line-height: 40px;
+	  margin-left: 10px;
+}
+.modal-header .close {
+    margin-top: -2px;
+}
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .6;
+}
+.mask-content{
+	height: 100px;
+}
+.mask-content span{
+	color: #da251c;
+	  font-size: 16px;
+	  line-height: 25px;
+	  width: 90%;
+	  display: block;
+	  margin: 0 auto;
+	  margin-top:15px;
+	  text-indent: 2em;
+}
+.alterInfo_length_withDraw span{
+	color: #ffde00;
+	  font-size: 14px;
+	  line-height: 25px;
+	  width: 400px;
+	  display: block;
+	  margin: 0 auto;
+	  margin-top:15px;
+	  text-indent: 2em;
+}
+.mask_action{
+	  height: 40px;
+	  width:80%;
+	  margin:0 auto;
+}
+.mask_action .span1{
+	display: block;
+	width: 150px;
+    height: 35px;
+    text-align: center;
+    background-color: #da251c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font: bold 18px/35px Arial, Helvetica, sans-serif;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+.mask_action2{
+	  height: 40px;
+	  margin-top: 10px;
+}
+.mask_action2 .span2{
+	display: block;
+	width: 150px;
+    height: 35px;
+    background-color: #29A7E1;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font: bold 18px/35px Arial, Helvetica, sans-serif;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+.mask_action .span1 a{
+  color: #fff;
+}
+
+.alterInfo_length{
+	width:90%;
+	height:160px;
+	margin:0 auto;
+	margin-top:20px;
+}
+.alterInfo_length_withDraw{
+	height: 240px;
+}
+.login_line{
+	height: 50px;
+}
+.act_type{
+	display: inline;
+    width: 100px;
+    color: #111;
+    font: 20px/33px "Microsoft YaHei";
+    text-align: right;
+}
+.c_input{
+	margin-left: 10px;
+    width: 65%;
+    height: 20px;
+    padding: 8px 5px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    color: #666;
+    font: 14px Arial,Helvetica,sans-serif;
+}
+.checkimg{
+	width: 30%;
+	height: 38px;
+	vertical-align:middle;
+}
+.c_input_withDraw{
+	margin-left: 20px;
+    width: 200px;
+    height: 20px;
+    padding: 8px 5px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    color: #666;
+    font: 14px Arial,Helvetica,sans-serif;
+}
+
+.vediy{
+	width: 30%;
+}
+.mask_action .loginspan{
+	float:left;
+	width:100px;
+}
+.qqLoginImg{
+	width:100px;
+	height: 35px;
+	margin-left: 10px;
+}
+.alterInfo_length .error_img{
+	text-align: center;
+    color: red;
+}

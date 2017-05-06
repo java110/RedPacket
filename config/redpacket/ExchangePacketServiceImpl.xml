@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ExchangePacketServiceImpl">
+	<!-- 保存我抢到的红包 -->
+	<insert id="saveExchangePacket" parameterType="Map">
+	INSERT INTO t_exchangeredpacket (
+					exchangeRedPacketId,
+					userId,
+					alipayAccount,
+					money,
+					rate,
+					status,
+					createDate,
+					months,
+					days,
+					finishDate,
+					dealUserId
+				)
+				VALUES
+					(
+						#{exchangeRedPacketId},
+						#{userId},
+						#{alipayAccount},
+						#{money},
+						#{rate},
+						#{status},
+						#{createDate},
+						#{months},
+						#{days},
+						#{finishDate},
+						#{dealUserId}
+					)
+	</insert>
+</mapper>

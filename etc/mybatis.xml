@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+  <properties resource="db.properties"/> 
+    <!-- 给指定的类定义别名，这样在后面的Mapping映射文件中，可以直接写别名，可以不用写完整限定类名了 -->
+
+    <typeAliases>
+    </typeAliases>
+  
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+        <property name="poolPingQuery" value="SELECT id FROM td_s_admin WHERE id = 1" />
+        <property name="poolPingEnabled" value="true" />
+        <property name="poolPingConnectionsNotUsedFor" value="3600000"/>
+        
+      </dataSource>
+    </environment>
+  </environments>
+  
+  <mappers>
+    <mapper resource="HomeMapper.xml"/>
+    <mapper resource="user/UserServiceImpl.xml"/>
+    <mapper resource="redpacket/SendPacketServiceImpl.xml"/>
+    <mapper resource="common/CommonServiceImpl.xml"/>
+    <mapper resource="redpacket/GetPacketServiceImpl.xml"/>
+    <mapper resource="redpacket/ExchangePacketServiceImpl.xml"/>
+     <mapper resource="redpacket/BuyPacketServiceImpl.xml"/>
+     <mapper resource="others/VedioServiceImpl.xml"/>
+  </mappers>
+  
+</configuration>

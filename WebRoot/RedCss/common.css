@@ -1,0 +1,110 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background: #da251c;
+}
+a{
+	text-decoration: none;
+}
+.fRight{
+	float:right;
+}
+.fLeft{
+	float:left;
+}
+.dBlock{
+	display: block;
+}
+.red_header{
+	width: 100%;
+	height: 150px;
+}
+.red_header img {
+	width: 100%;
+	height: 100%;
+}
+.red_footer{
+	width: 100%;
+	overflow: hidden;
+}
+.red_footer ul{
+	width: 80%;
+	margin: 0 auto;
+}
+.red_footer ul li{
+	width: 45%;
+	color:#fff;
+	list-style-type:none;
+}
+.red_footer ul li a{
+	color:#fff;
+	text-decoration: none;
+}
+.mask-action {
+    display: block;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    background-color: #f63;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font: bold 18px/35px Arial, Helvetica, sans-serif;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+.width45{
+	width: 45%;
+}
+.r_bottom_button{
+	width:75%;
+	margin: 30px auto;
+}
+.margin_top_50{
+	margin-top:50px;
+}
+.margin_top_250{
+	margin-top:250px;
+}
+/**数据加载开始**/
+#asynLayerId{
+			 z-index: 8000;
+		    position: fixed;
+		    bottom: 0;
+		    right: 0;
+		    width: 100%;
+		    height: 100%;
+		    cursor: pointer;
+		    color: #fff;
+		    font-family: "microsoft yahei";
+		    background: rgba(0,0,0,0.4);
+		    text-align: left;
+		}
+			#asynMask-bg {
+				    position: absolute;
+				    z-index: 9000;
+				    top: 30%;
+				    left: 10%;
+				    background-color: #da251c;
+				    width:80%;
+				    border-radius: 6px;
+				    height: 200px;
+				    vertical-align:middle;
+			}
+			.loadingImg{
+				    width: 80px;
+				    margin: 0 auto;
+				    display: block;
+				    margin-top: 20px;
+			}
+			#asynaAlterInfo{
+				color: #ffde00;
+			    display: inline-block;
+			    float: left;
+			    margin-top: 40px;
+			    margin-left: 30px;
+			    font-size: 18px;
+			}
+/**数据加载结束**/
