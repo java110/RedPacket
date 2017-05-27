@@ -22,7 +22,14 @@ https://jingyan.baidu.com/article/925f8cb836b26ac0dde0569e.html(有详细说明)
 
 	这里对于git 不做过多的说明，不了解的朋友可以查看这里 https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
 
-4.0 本地安装项目
+4.0 MySQL安装
+
+	MySQL版本没有要求，这里以MySQL5.7.18.1（目前为最新版） 为例  ，到这里https://dev.mysql.com/downloads/installer/ 傻瓜式安装
+不会的请参考这里 http://jingyan.baidu.com/article/e75057f2c7d4ebebc91a89cb.html?st=2&os=0&bd_page_type=1&net_type=2
+然后创建数据 redpacket 编码方式设置为UTF-8，根据E:\myproject\RedPacket\db 下的RedPacket.sql 创建 表信息
+
+
+5.0 本地安装项目
 
 	进入 要存放代码的目录，这里我们以E:\myproject为例
 	
@@ -32,5 +39,56 @@ https://jingyan.baidu.com/article/925f8cb836b26ac0dde0569e.html(有详细说明)
 	
 	克隆代码到本地执行命令 git clone https://github.com/java110/RedPacket.git
 	
+	修改在E:\myproject\RedPacket\etc目录下db.properties
+	
+	driver=com.mysql.jdbc.Driver
+	url=jdbc\:mysql\://135.192.86.200\:31057/redpacket?useUnicode\=yes&characterEncoding\=UTF8&autoReconnect\=true
+	username=red
+	password=red\#123
+	
+	修改为自己的MySQL信息，135.192.86.200 修改为自己数据库地址 ，31057修改为自己数据库端口（如果数据库信息没有修改默认为3306）
+	填写自己的数据库用户名和密码
+	
 	进入 RedPacket 目录 执行 mvn clean install 命令 
+	
+	在 target 目录下会有打包好的 war文件 (E:\myproject\RedPacket\target\RedPacket-0.0.1-SNAPSHOT.war)
+	
+6.0 下载安装Tomcat
+
+	官方获取Tomcat，这里以Tomcat8为例 http://tomcat.apache.org/download-80.cgi 下载解压，将上一步生成的RedPacket-0.0.1-SNAPSHOT.war的war包
+改名为RedPacket.war 放入到解压后的Tomcat目录下webapps 下，然后再bin 目录下运行 startup.bat 启动
+
+7.0 访问项目
+
+	该项目是对接微信和支付宝，所以必须要求有微信公众号或支付宝服务窗，微信对接地址为：http://ip:port/RedPacket/WGatewayController.indexPage
+这里ip:port ip 对应公网ip port对应 公网开放端口，微信目前只支持80端口，所以这个对接时请修改为80，首页访问地址为：http://ip:port/RedPacket/WIndexPacketController.indexPage
+支付宝对接地址为：http://ip:port/RedPacket/GatewayController.indexPage这里ip:port ip 对应公网ip port对应 公网开放端口，所以这个对接时请修改为80，首页访问地址为：http://ip:port/RedPacket/IndexPacketController.indexPage
+	如果没有微信公众号和支付宝服务窗的情况下需要测试时，BaseController 类下的方法
+	/**
+	 * 登录校验
+	 * 
+	 * add by wuxw 2016-1-31
+	 * 
+	 * @param request
+	 * @return
+	 */
+	public boolean loginValidate(HttpServletRequest request) {
+		// 生产获取用户
+		User user = this.getUser();
+		// 测试获取用户
+		 //User user = this.getTestUser();
+		if (user == null) {
+			return false;
+		}
+		return true;
+	}
+	
+	注释 生产获取用户，放开测试用获取用户,并且在数据库表t_user表中插入数据如下：
+	
+	insert into t_user(name,passwd,phone,userId,wOpenId,zOpenId,email) 
+	values('java110官方测试','123456','15897089471','10020160223001','123','','928255095@qq.com');
+	
+	
+	
+
 
