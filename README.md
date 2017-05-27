@@ -86,11 +86,11 @@ https://jingyan.baidu.com/article/925f8cb836b26ac0dde0569e.html(有详细说明)
 	insert into t_user(name,passwd,phone,userId,wOpenId,zOpenId,email) 
 	values('java110官方测试','123456','15897089471','10020160223001','123','','928255095@qq.com');
 	
-<h2>源码打架:</h2>
+<h2>二次开发项目搭建:</h2>
 
 	1.0 开发工具选择
 	
-	官方是由Myeclipse 8.5 开发，二次开发完全可以用eclipse 或任意版本的MyEclipse开发，各位idea的朋友只需要导入项目是选择以eclipse方式导入也是可以的
+	官方是由Myeclipse 8.5 开发，二次开发完全可以用eclipse 或任意版本的MyEclipse开发，配置maven信息，按maven导入就可以了，各位idea的朋友只需要导入项目是选择以eclipse方式导入也是可以的
 	
 	
 	
