@@ -15,7 +15,6 @@ import com.java110.common.SpringAppFactory;
 import com.java110.service.redpacket.GetPacketService;
 import com.java110.service.redpacket.SendPacketService;
 import com.java110.thread.redpacket.UpdateAccountAmountThread;
-import com.sun.xml.internal.ws.util.UtilException;
 /**
  * 初始化信息加载
  * 
@@ -32,7 +31,7 @@ public class StaticMapUtil {
 
 	public StaticMapUtil(String dbDefaultAreaCodex, String dbDefaultAreaIdx) {
 	}
-	public void init() throws UtilException {
+	public void init()  {
 		//加载配置表数据
 //		GetCodeMapping();
 		
