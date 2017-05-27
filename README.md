@@ -9,14 +9,12 @@
 
 1.0 安装java
 
-	此系统要求java版本为1.6以上，目前最新版为java1.9 版本，比较常用版本为java1.8版本，为了配合后面maven最新版，官方建议安装java1.7或java1.8.
-首先在www.oracle.com 中下载对应操作系统的java版本，这里以windows 为例 ，然后傻瓜式下一步，配置环境变量JAVA_HOME和path,不会的可以查看
+	此系统要求java版本为1.6以上，目前最新版为java1.9 版本，比较常用版本为java1.8版本，为了配合后面maven最新版，官方建议安装java1.7或java1.8.首先在www.oracle.com 中下载对应操作系统的java版本，这里以windows 为例 ，然后傻瓜式下一步，配置环境变量JAVA_HOME和path,不会的可以查看
 https://jingyan.baidu.com/article/925f8cb836b26ac0dde0569e.html(有详细说明)
 
 2.0 安装 maven3 
 
-	进入Apache 官方下载 maven3，目前最新版为maven3.5.0 下载地址为(这里)[http://maven.apache.org/download.cgi],配置MAVEN_HOME环境变量
-和path 变量，这个和配置java环境变量是一致的这里不再详细说明，可以参考官方安装说明http://maven.apache.org/install.html
+	进入Apache 官方下载 maven3，目前最新版为maven3.5.0 下载地址为(这里)[http://maven.apache.org/download.cgi],配置MAVEN_HOME环境变量和path 变量，这个和配置java环境变量是一致的这里不再详细说明，可以参考官方安装说明http://maven.apache.org/install.html
 
 3.0 安装git版本
 
@@ -24,9 +22,8 @@ https://jingyan.baidu.com/article/925f8cb836b26ac0dde0569e.html(有详细说明)
 
 4.0 MySQL安装
 
-	MySQL版本没有要求，这里以MySQL5.7.18.1（目前为最新版） 为例  ，到这里https://dev.mysql.com/downloads/installer/ 傻瓜式安装
-不会的请参考这里 http://jingyan.baidu.com/article/e75057f2c7d4ebebc91a89cb.html?st=2&os=0&bd_page_type=1&net_type=2
-然后创建数据 redpacket 编码方式设置为UTF-8，根据E:\myproject\RedPacket\db 下的RedPacket.sql 创建 表信息
+	MySQL版本没有要求，这里以MySQL5.7.18.1（目前为最新版） 为例  ，到这里https://dev.mysql.com/downloads/installer/ 傻瓜式安装不会的请参考这里 http://jingyan.baidu.com/article/e75057f2c7d4ebebc91a89cb.html?st=2&os=0&bd_page_type=1&net_type=2
+	然后创建数据 redpacket 编码方式设置为UTF-8，根据E:\myproject\RedPacket\db 下的RedPacket.sql 创建 表信息
 
 
 5.0 本地安装项目
@@ -64,6 +61,7 @@ https://jingyan.baidu.com/article/925f8cb836b26ac0dde0569e.html(有详细说明)
 这里ip:port ip 对应公网ip port对应 公网开放端口，微信目前只支持80端口，所以这个对接时请修改为80，首页访问地址为：http://ip:port/RedPacket/WIndexPacketController.indexPage
 支付宝对接地址为：http://ip:port/RedPacket/GatewayController.indexPage这里ip:port ip 对应公网ip port对应 公网开放端口，所以这个对接时请修改为80，首页访问地址为：http://ip:port/RedPacket/IndexPacketController.indexPage
 	如果没有微信公众号和支付宝服务窗的情况下需要测试时，BaseController 类下的方法
+	
 	/**
 	 * 登录校验
 	 * 
