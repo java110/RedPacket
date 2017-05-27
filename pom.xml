@@ -5,6 +5,10 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name/>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+</properties>
   <description/>
   <dependencies>
     <dependency>
@@ -280,6 +284,7 @@
         <configuration>
           <source>1.5</source>
           <target>1.5</target>
+          <encoding>utf8</encoding>
         </configuration>
       </plugin>
     </plugins>
