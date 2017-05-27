@@ -5,40 +5,40 @@ import net.sf.json.JSONObject;
 public class WechatAuthInfo {
 
 	/**
-	 * ÍøÒ³ÊÚÈ¨½Ó¿Úµ÷ÓÃÆ¾Ö¤,×¢Òâ£º´Ëaccess_tokenÓë»ù´¡Ö§³ÖµÄaccess_token²»Í¬
+	 * ç½‘é¡µæˆæƒæ¥å£è°ƒç”¨å‡­è¯,æ³¨æ„ï¼šæ­¤access_tokenä¸åŸºç¡€æ”¯æŒçš„access_tokenä¸åŒ
 	 */
 	public String access_token;	
 	
 	/**
-	 * access_token½Ó¿Úµ÷ÓÃÆ¾Ö¤³¬Ê±Ê±¼ä£¬µ¥Î»£¨Ãë£©
+	 * access_tokenæ¥å£è°ƒç”¨å‡­è¯è¶…æ—¶æ—¶é—´ï¼Œå•ä½ï¼ˆç§’ï¼‰
 	 */
 	public int expires_in;
 	
 	/**
-	 * ÓÃ»§Ë¢ĞÂaccess_token
+	 * ç”¨æˆ·åˆ·æ–°access_token
 	 */
 	public String refresh_token;
 	
 	/**
-	 * ÓÃ»§Î¨Ò»±êÊ¶
+	 * ç”¨æˆ·å”¯ä¸€æ ‡è¯†
 	 */
 	public String openid;
 	
 	/**
-	 * ÓÃ»§ÊÚÈ¨µÄ×÷ÓÃÓò£¬Ê¹ÓÃ¶ººÅ£¨,£©·Ö¸ô
+	 * ç”¨æˆ·æˆæƒçš„ä½œç”¨åŸŸï¼Œä½¿ç”¨é€—å·ï¼ˆ,ï¼‰åˆ†éš”
 	 */
 	public String scope;
 	
 	/**
-	 * ´ÓÎ¢ĞÅÆ½Ì¨»ñÈ¡µ½access_tokenµÄÊ±¼ä
+	 * ä»å¾®ä¿¡å¹³å°è·å–åˆ°access_tokençš„æ—¶é—´
 	 */
 	public long getTime;
 	
 	/**
-	 * ½«´ÓÊı¾İ¿â»ñÈ¡µ½µÄIData Êı¾İ½âÎöµ½³ÉÔ±±äÁ¿ÖĞ
+	 * å°†ä»æ•°æ®åº“è·å–åˆ°çš„IData æ•°æ®è§£æåˆ°æˆå‘˜å˜é‡ä¸­
 	 * 
 	 * @param data
-	 * @see [Àà¡¢Àà#·½·¨¡¢Àà#³ÉÔ±]
+	 * @see [ç±»ã€ç±»#æ–¹æ³•ã€ç±»#æˆå‘˜]
 	 */
 	public void parse(JSONObject jsonObject) {
 		access_token = jsonObject.getString("access_token");	
@@ -51,7 +51,7 @@ public class WechatAuthInfo {
 	}	
 	
 	/**
-	 * ÅĞ¶Ïaccess_tokenÊÇ·ñÒÑ¹ıÆÚ
+	 * åˆ¤æ–­access_tokenæ˜¯å¦å·²è¿‡æœŸ
 	 * @return
 	 */
 	public boolean isExpired() {
