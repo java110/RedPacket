@@ -14,7 +14,7 @@ https://jingyan.baidu.com/article/925f8cb836b26ac0dde0569e.html(有详细说明)
 
 2.0 安装 maven3 
 
-	进入Apache 官方下载 maven3，目前最新版为maven3.5.0 下载地址为(这里)[http://maven.apache.org/download.cgi],配置MAVEN_HOME环境变量和path 变量，这个和配置java环境变量是一致的这里不再详细说明，可以参考官方安装说明http://maven.apache.org/install.html
+	进入Apache 官方下载 maven3，目前最新版为maven3.5.0 下载地址为[这里](http://maven.apache.org/download.cgi),配置MAVEN_HOME环境变量和path 变量，这个和配置java环境变量是一致的这里不再详细说明，可以参考官方安装说明http://maven.apache.org/install.html
 
 3.0 安装git版本
 
@@ -85,6 +85,14 @@ https://jingyan.baidu.com/article/925f8cb836b26ac0dde0569e.html(有详细说明)
 	
 	insert into t_user(name,passwd,phone,userId,wOpenId,zOpenId,email) 
 	values('java110官方测试','123456','15897089471','10020160223001','123','','928255095@qq.com');
+	
+<h2>源码打架:</h2>
+
+	1.0 开发工具选择
+	
+	官方是由Myeclipse 8.5 开发，二次开发完全可以用eclipse 或任意版本的MyEclipse开发，各位idea的朋友只需要导入项目是选择以eclipse方式导入也是可以的
+	
+	
 	
 	
 	
