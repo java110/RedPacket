@@ -3,7 +3,6 @@ package com.java110.util;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import com.sun.xml.internal.ws.util.UtilException;
 /**
  * 静态资源加载类
  * @author wuxw
@@ -19,7 +18,7 @@ public class InitStaticClass implements ServletContextListener{
 		StaticMapUtil staticMapUtil = new StaticMapUtil();
 		try {
 			staticMapUtil.init();
-		} catch (UtilException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			new InitStaticClass();
 		}

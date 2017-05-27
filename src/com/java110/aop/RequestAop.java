@@ -6,7 +6,6 @@ import org.aspectj.lang.ProceedingJoinPoint;
 
 import com.java110.common.Global;
 import com.java110.controller.BaseController;
-import com.sun.xml.internal.ws.util.UtilException;
 
 public class RequestAop {
 	private Logger logger = Logger.getLogger(RequestAop.class);
@@ -30,7 +29,7 @@ public class RequestAop {
 		Object obj = null;
 		try {
 			obj = pjp.proceed(pjp.getArgs());
-		} catch (UtilException e) {
+		} catch (Exception e) {
 			//new UtilException(1999,e);
 			e.printStackTrace();
 			logger.error("异常", e);
